@@ -1,0 +1,24 @@
+Linux平台：
+
+//create socket file description
+int socket(int domain, int type, int proto);
+    int so = socket(AF_INET, SOCK_STREAM, 0);/
+    int so = socket(AF_INET, SOCK_STREAM|SOCK_NONBLOCK, IPPROTO_TCP);
+
+//set to non-block
+int oldFlag = fcntl(sockfd, F_GETFL, 0);
+int newFlag = oldFlag | O_NONBLOCK;
+fcntl(sockfd, F_SETFL, newFlag);
+
+connect/accept/send/recv
+
+阻塞/非阻塞：
+    当前函数执行不成功时，会阻塞当前线程，在超时时间到达或执行成功的条件满足后恢复继续执行/
+    当前函数执行不成功时，不会阻塞当前线程，而是立即返回，继续执行程序流。
+    
+    
+
+
+
+
+
