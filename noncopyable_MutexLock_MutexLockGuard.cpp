@@ -1,3 +1,4 @@
+#define MutexLockGuard(x) static_assert(false, "missing mutex guard var name")
 class noncopyable{
 public:
     noncopyable(const noncopyable&) = delete;
